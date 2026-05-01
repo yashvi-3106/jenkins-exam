@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Form</title>
+
+    <style>
+        body {
+            font-family: "Inter", system-ui, -apple-system, sans-serif;
+            background: #f6f7fb;
+            min-height: 100vh;
+            margin: 0;
+            display: grid;
+            place-items: center;
+        }
+
+        .form-container {
+            background: #ffffff;
+            width: 420px;
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid #e6e8ef;
+        }
+
+        h1 {
+            margin: 0 0 30px;
+            font-size: 22px;
+            font-weight: 600;
+            color: #1f2937;
+        }
+
+        label {
+            display: block;
+            font-size: 13px;
+            font-weight: 500;
+            color: #6b7280;
+            margin-bottom: 6px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        select {
+            width: 100%;
+            padding: 10px 12px;
+            font-size: 14px;
+            border-radius: 8px;
+            border: 1px solid #d1d5db;
+            outline: none;
+            transition: border 0.2s ease;
+        }
+
+        input:focus,
+        select:focus {
+            border-color: #6366f1;
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 14px;
+            font-size: 14px;
+            color: #374151;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: #374151;
+        }
+
+        .button-group {
+            margin-top: 30px;
+            display: flex;
+            gap: 12px;
+        }
+
+        input[type="submit"],
+        input[type="reset"] {
+            flex: 1;
+            padding: 11px 0;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            border: 1px solid transparent;
+        }
+
+        input[type="submit"] {
+            background: #111827;
+            color: #ffffff;
+        }
+
+        input[type="reset"] {
+            background: #ffffff;
+            color: #111827;
+            border-color: #d1d5db;
+        }
+
+        input[type="submit"]:hover {
+            background: #000000;
+        }
+
+        input[type="reset"]:hover {
+            background: #f3f4f6;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="form-container">
+    <h1>Create your account</h1>
+
+    <form action="RegisterServlet" method="post" novalidate>
+
+        <label for="name">Full name</label>
+        <input type="text" id="name" name="name">
+        <br><br>
+
+        <label for="email">Email address</label>
+        <input type="email" id="email" name="email">
+        <br><br>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password">
+        <br><br>
+
+        <label>Gender</label>
+        <div class="radio-group">
+            <label><input type="radio" name="gender" value="Male"> Male</label>
+            <label><input type="radio" name="gender" value="Female"> Female</label>
+            <label><input type="radio" name="gender" value="Other"> Other</label>
+        </div>
+        <br>
+
+        <label for="course">Course</label>
+        <select id="course" name="course">
+            <option value="">Select a course</option>
+            <option value="Java">Java</option>
+            <option value="Python">Python</option>
+            <option value="Web Development">Web Development</option>
+            <option value="Data Science">Data Science</option>
+        </select>
+        <br><br>
+
+        <div class="checkbox-group">
+            <input type="checkbox" name="terms">
+            <span>I agree to the Terms & Conditions</span>
+        </div>
+
+        <div class="button-group">
+            <input type="submit" value="Create Account">
+            <input type="reset" value="Clear">
+        </div>
+
+    </form>
+</div>
+
+</body>
+</html>
